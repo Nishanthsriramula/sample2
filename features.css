@@ -1,0 +1,104 @@
+/* body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+} */
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    background-color: transparent;
+    height: 70vh;
+
+}
+
+.collapsible-section {
+    order: 1;
+    width: 70%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.collapsible {
+    /* font-size: 50px; */
+    background-color:transparent;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    margin-bottom: 5px;
+    border-bottom: solid gray 1px;
+    position: relative;
+    transition: all 0.1s ease;
+}
+.collapsible::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.collapsible:hover::after,
+.collapsible.active::after {
+    width: 100%;
+}
+
+/* .collapsible:hover {
+    background-color: #555;
+    text-decoration: underline;
+} */
+
+.content {
+    display: none;
+    overflow: hidden;
+    background-color:transparent;
+    color: aliceblue;
+    
+}
+
+.image-section {
+    order: 2;
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+
+.image-section img {
+    max-height: auto;
+    object-fit: cover;
+    height: 100%;
+}
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column-reverse; /* Change flex direction for mobile */
+    }
+    .image-section {
+        order: 2;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .image-section img {
+        max-height: auto;
+        object-fit: cover;
+        height: 100%;
+    }
+    
+}
